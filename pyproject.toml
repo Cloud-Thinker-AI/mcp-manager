@@ -1,0 +1,32 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "mcp-manager-cli"
+version = "1.0.1"
+authors = [
+  { name="Khai Trinh Xuan", email="khai.trinh@cloudthinker.io" },
+]
+description = "A unified CLI and daemon/service to manage and proxy multiple MCP servers, with robust logging and a modern CLI UX."
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "fastapi>=0.115.12,<1.0.0",
+    "fastmcp>=2.5.2",
+    "prompt-toolkit>=3.0.51",
+    "pydantic>=2.11.5",
+    "pytest>=8.3.5",
+    "rich>=14.0.0",
+]
+license = "MIT"
+license-files = ["LICEN[CS]E*"]
+keywords = [
+    "cli",
+    "mcp",
+    "manager",
+]
+
+[project.scripts]
+mcp-manager = "mcp_manager.cli.main:cli"
+mcp-manager-daemon = "mcp_manager.server.main:main"

@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+  mcp-manager:
+    image: khaitrinhxuan/mcp-manager-cli:latest
+    container_name: mcp-manager
+    ports:
+      - "4123:4123"
+    volumes:
+      - ./.cache:/app/.cache
+    working_dir: /app
+    environment:
+      - PYTHONUNBUFFERED=1 
